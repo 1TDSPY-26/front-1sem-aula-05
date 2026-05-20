@@ -111,22 +111,15 @@ botaoEntrar.addEventListener("click", function(evento){
         console.log(error);
     }
 
-    let frutas = ["banana", "maçã", "laranja", "pêra", "uva", "abacaxi", "melancia", "manga", "kiwi", "morango"];
-    
-    console.log(frutas[0]);
-    console.log(frutas[1]);
-    console.log(frutas[2]);
-    console.log(frutas[3]);
-    console.log(frutas[4]);
     
     function soma(a=0,b=0){
         return a+b;
     }
-     function subtracao(a,b){
+    function subtracao(a,b){
         console.log(a+b);
     }
     console.log(soma(4,4));
-
+    
     pessoa = {
         nome: "Gustavo",
         idade: 21,
@@ -143,5 +136,29 @@ botaoEntrar.addEventListener("click", function(evento){
             console.log(`Nome: ${this.nome}, Idade: ${this.idade}, Trabalhando: ${this.trabalhando}, Endereço: ${this.endereco.rua}, ${this.endereco.numero}, ${this.endereco.cidade} - ${this.endereco.estado}, Telefone: ${this.telefone[0]}, ${this.telefone[1]}, Email: ${this.email}`);
         }
     }       
-
+    
     pessoa.dados();
+    
+    let frutas = ["banana", "maçã", "laranja", "pêra", "uva", "abacaxi", "melancia", "manga", "kiwi", "morango"];
+    
+    console.log(frutas[0]);
+    console.log(frutas[1]);
+    console.log(frutas[2]);
+    console.log(frutas[3]);
+    console.log(frutas[4]);
+
+
+    try {
+
+    frutas.forEach( (fruta) => {
+        if(fruta === "uva"){
+            console.log("A fruta é uma: " ,fruta);
+           throw new Error("Saiu antes de imprimir a fruta pêra!:");
+        }
+        console.log("A fruta é uma: " ,fruta);
+    })
+
+    } catch (error) {
+        console.error(error);
+        
+    }
