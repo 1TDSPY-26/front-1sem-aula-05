@@ -1,4 +1,3 @@
-
 // // Conversões:
 // let numero = "123";
 // console.log(typeof numero); // 123
@@ -6,10 +5,10 @@
 // console.log(typeof parseFloat("12.5")); // 12.5
 // console.log(typeof numero.toString()); // “123”
 
-// console.log("TIPOS"); 
-// console.log(typeof null); 
-// console.log(typeof {}); 
-// console.log(typeof []); 
+// console.log("TIPOS");
+// console.log(typeof null);
+// console.log(typeof {});
+// console.log(typeof []);
 // console.log(typeof 'a');
 // console.log(typeof true);
 
@@ -46,7 +45,7 @@
 //     idade : 33,
 //     casado: true,
 //     email : "email@email.com"
-// } 
+// }
 
 // //Imprimindo os dados do objeto:
 // //Concatenação padrão:
@@ -58,65 +57,106 @@
 //Listas
 // console.log(frutas)
 // console.table(frutas)
-let frutas = ["laranja", "banana", "maçã","uva","pêra"];
 
-console.table(frutas[0]);
-console.table(frutas[1]);
-console.table(frutas[2]);
-console.table(frutas[3]);
-console.table(frutas[4]);
+// //Explicando funções
+// //Funções anônimas tradicionais
+// function soma(a=0,b=0){
+//     return a+b;
+// }
 
-//Explicando funções
-//Funções anônimas tradicionais
-function soma(a=0,b=0){
-    return a+b;
-}
+// function subtracao(a,b){
+//     console.log(a+b);
+// }
 
-function subtracao(a,b){
-    console.log(a+b);
-}
+// let pessoa = {
+//     nome : "José",
+//     idade: 33,
+//     trabalhando: true,
+//     endereco:{
+//         rua:"Rua Dois", nr:10, cep:"12345-098",cidade:"São Paulo", uf:"SP"
+//     },
+//     telefones: ['11-993344559','11-675344559'],
+//     email:"email@email.com",
+//     dados: function(){
+//         console.log(`Eu sou ${this.nome} e tenho ${this.idade} anos de idade, atualmente ${this.trabalhando ? "estou trabalhando" : "não estou trabalhando"}, eu moro na ${this.endereco.rua} nr:${this.endereco.nr} em ${this.endereco.cidade} caso queira entrar em contato pode me ligar no tel: ${this.telefones[0]} ou deixar recado no tel: ${this.telefones[1]}`)
+//     }
+// }
 
-let pessoa = {
-    nome : "José",
-    idade: 33,
-    trabalhando: true,
-    endereco:{
-        rua:"Rua Dois", nr:10, cep:"12345-098",cidade:"São Paulo", uf:"SP" 
-    },
-    telefones: ['11-993344559','11-675344559'],
-    email:"email@email.com",
-    dados: function(){
-        console.log(`Eu sou ${this.nome} e tenho ${this.idade} anos de idade, atualmente ${this.trabalhando ? "estou trabalhando" : "não estou trabalhando"}, eu moro na ${this.endereco.rua} nr:${this.endereco.nr} em ${this.endereco.cidade} caso queira entrar em contato pode me ligar no tel: ${this.telefones[0]} ou deixar recado no tel: ${this.telefones[1]}`)
+// //Executando a função do objeto
+// pessoa.dados();
+
+// //Executando uma função:
+// console.log(soma(4,4));
+
+// const multiplicacao = (a,b)=> {
+//     return a*b;
+// };
+
+// console.log(multiplicacao(2,3));
+
+// const pessoa2 = {
+//     nome : "Antonio",
+//     idade: 33,
+//     trabalhando: true,
+//     endereco:{
+//         rua:"Rua Trê", nr:77, cep:"12345-098",cidade:"Rio de Janeiro", uf:"RJ"
+//     },
+//     telefones: ['11-993344559','11-675344559'],
+//     email:"email@email.com",
+//     dados: ()=>{
+//         console.log(`Eu sou ${this.nome} e tenho ${this.idade} anos de idade, atualmente ${this.trabalhando ? "estou trabalhando" : "não estou trabalhando"}, eu moro na ${this.endereco.rua} nr:${this.endereco.nr} em ${this.endereco.cidade} caso queira entrar em contato pode me ligar no tel: ${this.telefones[0]} ou deixar recado no tel: ${this.telefones[1]}`)
+//     }
+// }
+
+// pessoa2.dados();
+
+// let frutas = ["laranja", "banana", "maçã","uva","pêra"];
+
+// console.table(frutas[0]);
+// console.table(frutas[1]);
+// console.table(frutas[2]);
+// console.table(frutas[3]);
+// console.table(frutas[4]);
+
+// //Iterando sobre a lista com ForEach
+// frutas.forEach( (fruta,index,array)=>{
+//     // console.log(index,fruta);
+//     console.log(array[index]);
+// })
+
+// let frutas = ["laranja", "banana", "maçã", "uva", "pêra"];
+//Iterando sobre a lista com ForEach
+// frutas.forEach( (fruta)=>{
+//     if(fruta === "uva"){
+//         console.log("Fruta encontrada: ",fruta);
+//         return;
+//     }
+//     console.log("Fruta encontrada: ",fruta);
+// });
+
+// try {
+
+//   frutas.forEach((fruta) => {
+//     if (fruta === "uva") {
+//       console.log("Fruta encontrada: ", fruta);
+//     //   return;
+//     throw new Error("Saiu antes de imprimir a fruta pêra!:")
+//     }
+//     console.log("Fruta encontrada: ", fruta);
+
+//   });
+// } catch (error) {
+//     console.error(error);
+// }
+
+let frutas = ["laranja", "banana", "maçã", "uva", "pêra"];
+
+for (let index = 0; index < frutas.length; index++) {
+    if (frutas[index] === "banana") {
+        console.log("Fruta encontrada: ", frutas[index]);
+        break;
     }
+    console.log("Fruta encontrada: ", frutas[index]);
 }
 
-
-//Executando a função do objeto
-pessoa.dados();
-
-
-//Executando uma função:
-console.log(soma(4,4));
-
-const multiplicacao = (a,b)=> { 
-    return a*b;
-};
-
-console.log(multiplicacao(2,3));
-
-
-const pessoa2 = {
-    nome : "Antonio",
-    idade: 33,
-    trabalhando: true,
-    endereco:{
-        rua:"Rua Trê", nr:77, cep:"12345-098",cidade:"Rio de Janeiro", uf:"RJ" 
-    },
-    telefones: ['11-993344559','11-675344559'],
-    email:"email@email.com",
-    dados: ()=>{
-        console.log(`Eu sou ${this.nome} e tenho ${this.idade} anos de idade, atualmente ${this.trabalhando ? "estou trabalhando" : "não estou trabalhando"}, eu moro na ${this.endereco.rua} nr:${this.endereco.nr} em ${this.endereco.cidade} caso queira entrar em contato pode me ligar no tel: ${this.telefones[0]} ou deixar recado no tel: ${this.telefones[1]}`)
-    }
-}
-
-pessoa2.dados();
+console.log("Saiu do LOOP");
