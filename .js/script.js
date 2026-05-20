@@ -84,7 +84,7 @@ const usuario = {
 
 const botaoEntrar = document.getElementById("btnEntrar");
 
-botaoEntrar.addEventListener("click", som);function(evento){
+botaoEntrar.addEventListener("click", function(evento){
 
     evento.preventDefault();
 
@@ -111,5 +111,37 @@ botaoEntrar.addEventListener("click", som);function(evento){
         console.log(error);
     }
 
-}
+    let frutas = ["banana", "maçã", "laranja", "pêra", "uva", "abacaxi", "melancia", "manga", "kiwi", "morango"];
     
+    console.log(frutas[0]);
+    console.log(frutas[1]);
+    console.log(frutas[2]);
+    console.log(frutas[3]);
+    console.log(frutas[4]);
+    
+    function soma(a=0,b=0){
+        return a+b;
+    }
+     function subtracao(a,b){
+        console.log(a+b);
+    }
+    console.log(soma(4,4));
+
+    pessoa = {
+        nome: "Gustavo",
+        idade: 21,
+        trabalhando: true,
+        endereco:{
+            rua: "Rua das Couves",
+            numero: 123,
+            cidade: "São Paulo",
+            estado: "SP"
+        },
+        telefone: ["123456789", "987654321"],
+        email: "email@gmail.com",
+        dados: function(){
+            console.log(`Nome: ${this.nome}, Idade: ${this.idade}, Trabalhando: ${this.trabalhando}, Endereço: ${this.endereco.rua}, ${this.endereco.numero}, ${this.endereco.cidade} - ${this.endereco.estado}, Telefone: ${this.telefone[0]}, ${this.telefone[1]}, Email: ${this.email}`);
+        }
+    }       
+
+    pessoa.dados();
